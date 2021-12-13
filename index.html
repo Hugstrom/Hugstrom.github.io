@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name=”viewport” content=”width=device-width,initial-scale=1.0″>
+<title>文章投稿サイト</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="ここにサイト説明を入れます">
+<meta name="keywords" content="キーワード１,キーワード２,キーワード３,キーワード４,キーワード５">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/fixmenu_pagetop.js"></script>
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+$(function(){
+$('a[href^="#"]').click(function() {
+var speed = 800;
+var href= $(this).attr("href");
+var target = $(href == "#" || href == "" ? 'html' : href);
+var position = target.offset().top;
+$('body,html').animate({scrollTop:position}, speed, 'swing');
+return false;
+});
+});
+</script>
+  <script type="text/javascript">
+   var info = document.getElementById('output-message');
+　 
+　 var pNode = document.createElement('p');
+　 
+　 var textNode = document.createTextNode('textbox');
+　 
+　 pNode.appendChild(textNode);
+　 
+　 info.appendChild(pNode);
+</script>
+</head>
+
+<body>
+
+<header>
+<h1 id="logo"><a href="index.html"><img src="images/logo.png" alt="SAMPLE COMPANY"></a></h1>
+<nav id="menubar">
+<ul>
+<li><a href="#new">about</a></li>
+<li><a href="#company">post</a></li>
+<li><a href="#Service">opus</a></li>
+</ul>
+</nav>
+</header>
+
+<div id="container">
+
+<div id="contents">
+
+<section id="new">
+
+<h2>about</h2>
+<div>このサイトではあなたが思いついた文章や詩を他の人たちと共有することができます。<br><br>フォームにテキストを入力すれば、あなたの書いたテキストが、すぐにサイトに反映されます。<br><br>
+    書いた文章はすぐにサイトに反映されるので、<br><br>他の人の作品を閲覧することもできます。<br><br>作った文章は匿名で展示されますが、<br><br>文章を投稿する際は、マナーを守って、<br><br>適切な文章を投稿するように心がけましょう。</div>
+
+</section>
+<!--/#new-->
+<section id="Service">
+<h2>opus</h2>
+<p id="output-message"></p>
+</section>
+<section id="company">
+
+<h2>post</h2>
+<div>このフォームに文章を入力してください。</div>
+<form id="form1" action="#">
+    <input type="text" id="input-message">
+    <input type="button" onclick="showMessage()" value="送信">
+  </form>
+  <script language="javascript" type="text/javascript">
+    const showMessage = () => {
+      const textbox = document.getElementById("input-message");
+      const inputValue = textbox.value;
+
+      //テキストボックスの値を使って、出力するメッセージを生成する
+      const output = inputValue;
+      //出力用のp要素にメッセージを表示
+      document.getElementById("output-message").innerHTML = output;
+    }
+  </script>
+</section>
+</div>
+</div>
+</body>
+</html>
